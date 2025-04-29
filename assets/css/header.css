@@ -1,0 +1,92 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__photo{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.header__title{
+    font-family: 'Neue Machina';
+}
+
+.header__info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.header__info p{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: .5rem;
+    font-size: 1.1rem;
+}
+
+.header__info p::before{
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: .7rem;
+}
+
+.header__info a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.header__info a:hover{
+    text-decoration: underline;
+}
+
+.header__info .badge::before{
+    background-image: url(../img/icons/badge.svg);
+}
+
+.header__info .location::before{
+    background-image: url(../img/icons/location_on.svg);
+}
+
+.header__info .mail::before{
+    background-image: url(../img/icons/mail.svg);
+}
+
+.header__info .permPhone::before{
+    background-image: url(../img/icons/perm_phone_msg.svg);
+}
+
+@media only screen and (min-width: 768px) {
+    .header{
+        display: grid;
+        gap: .5rem;
+        grid-template-areas: 
+        "head__photo header__title"
+        "head__photo header__info"
+        ;
+    }
+    .header__photo{
+        grid-area: head__photo;
+        margin: 0 auto;
+    }
+    .header__title{
+        grid-area: header__title;
+        text-align: start;
+        font-size: 1.5rem;
+    }
+    .header__info{
+        grid-area: header__info;
+    }
+    .header__info p{
+        font-size: .8rem;
+    }
+}
